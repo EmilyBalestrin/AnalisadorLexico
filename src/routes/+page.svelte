@@ -212,4 +212,122 @@
 </main>
 
 <style>
+    :global(body) {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h1 { text-align: center; color: #fff; margin-bottom: 40px; }
+    h2 { margin-top: 0; font-size: 1.2rem; color: #bbb; border-bottom: 1px solid #333; padding-bottom: 10px;}
+
+    .card {
+        background-color: #252525;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Inputs e Botões */
+    .input-group { display: flex; gap: 10px; margin-bottom: 15px; }
+
+    input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+
+        background: #333;
+        border: 1px solid #444;
+        color: #fff;
+        padding: 12px;
+        border-radius: 4px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus { border-color: #4CAF50; }
+    input[type="text"].error { border-color: #f44336; color: #ff8a80; }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 0 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .btn-primary:hover { background-color: #0056b3; }
+
+    /* Tags de Tokens */
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+        background: #333;
+        border: 1px solid #555;
+        padding: 5px 10px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+    .tag button {
+        background: #ff5252;
+        border: none;
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 0.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Tabela */
+    .table-responsive { overflow-x: auto; }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+    }
+    th, td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #444;
+    }
+    th { background-color: #333; }
+
+    /* Highlight da linha ativa (Estado Atual) */
+    .active-row { background-color: rgba(76, 175, 80, 0.2); }
+    .active-row .state-col { color: #4CAF50; font-weight: bold; border-left: 4px solid #4CAF50; }
+    .active-cell { background-color: #4CAF50; color: white; font-weight: bold; }
+
+    /* Histórico */
+    .history-section ul { list-style: none; padding: 0; }
+    .history-section li {
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        background: #2a2a2a;
+        display: flex;
+        justify-content: space-between;
+    }
+    .history-section li.ok { border-left: 4px solid #4CAF50; }
+    .history-section li.nok { border-left: 4px solid #f44336; }
+    .empty-msg { text-align: center; color: #666; font-style: italic; }
+
+    .hint { font-size: 0.8rem; color: #888; margin-top: 10px;}
+    .status-indicator { margin-top: 10px; color: #aaa; }
+    .badge { background: #4CAF50; color: #fff; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; margin-left: 5px;}
+
 </style>
