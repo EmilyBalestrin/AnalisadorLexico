@@ -161,6 +161,54 @@
             </div>
         </div>
     </section>
+
+    <section class="card table-section">
+        <h2>Matriz de Transição de Estados</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                <tr>
+                    <th>Estado</th>
+                    {#each alfabeto as char}
+                        <th>{char}</th>
+                    {/each}
+                    <th>Final</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#each listaEstados as estado}
+                    <tr class:active-row={estadoAtual === estado.id}>
+                        <td class="state-col">q{estado.id}</td>
+                        {#each alfabeto as char}
+                            <td class:active-cell={estadoAtual === estado.id && entradaAtual.endsWith(char)}>
+                                {estado.movimentos[char] !== undefined ? `q${estado.movimentos[char]}` : '-'}
+                            </td>
+                        {/each}
+                        <td>
+                            {#if estadosFinais.has(estado.id)}✅{/if}
+                        </td>
+                    </tr>
+                {/each}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="history-section">
+        <h3>Histórico</h3>
+        {#if historico.length === 0}
+            <p class="empty-msg">Nenhuma análise ainda.</p>
+        {:else}
+            <ul>
+                {#each historico as item}
+                    <li class={item.aceito ? 'ok' : 'nok'}>
+                        <strong>{item.palavra}</strong>
+                        <span>-> {item.aceito ? 'Reconhecido' : 'Rejeitado'} (Fim em q{item.estadoFinal})</span>
+                    </li>
+                {/each}
+            </ul>
+        {/if}
+    </section>
 </main>
 
 <style>
