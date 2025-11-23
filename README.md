@@ -1,38 +1,74 @@
-# sv
+# Analisador Léxico
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Este projeto consiste na implementação de um **Analisador Léxico** baseado em **Autômatos Finitos Determinísticos (AFD)**. O software foi desenvolvido como parte da avaliação da disciplina de Linguagens Formais do curso de Ciência da Computação, simulando a identificação de tokens através de uma matriz de transição de estados.
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 🌐 Acesso Online (Demo)
 
-```sh
-# create a new project in the current directory
-npx sv create
+Você pode utilizar o analisador diretamente pelo navegador, sem necessidade de instalação:
 
-# create a new project in my-app
-npx sv create my-app
-```
+**[Analisador Léxico](https://emilybalestrin.github.io/AnalisadorLexico/)**
 
-## Developing
+*(Caso prefira rodar localmente, siga as instruções na seção "Como Executar" abaixo).*
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+---
 
-```sh
-npm run dev
+## 🧠 Funcionamento do Projeto
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+O analisador funciona como uma máquina de estados que processa a entrada do usuário caractere por caractere.
 
-## Building
+### Lógica Implementada
+1.  **Definição de Tokens:** O usuário cadastra palavras válidas (ex: `casa`, `abacaxi`, `maaça`). O algoritmo converte essa lista dinamicamente em uma **Matriz de Transição** ($M[estado, simbolo]$).
+2.  **Reconhecimento:** Ao digitar na área de teste, o autômato transita entre os estados ($q0, q1...$) conforme os símbolos inseridos.
+3.  **Validação:** O caractere **Espaço** atua como separador. Ao digitá-lo, o sistema verifica se o estado atual é um **Estado Final**.
+    * ✅ **Aceito:** Token reconhecido (adicionado ao histórico como válido).
+    * ❌ **Rejeitado:** Token inválido ou não finalizado.
 
-To create a production version of your app:
+### Requisitos Atendidos
+* **Alfabeto:** Suporte exclusivo para letras minúsculas ($a-z$).
+* **Interface Visual:** Exibição da matriz de estados e destaque da transição ativa em tempo real.
+* **Separador:** Uso de espaço em branco para delimitar e validar tokens.
 
-```sh
-npm run build
-```
+---
 
-You can preview the production build with `npm run preview`.
+## 🚀 Tecnologias
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+* **[SvelteKit](https://kit.svelte.dev/) (Vite):** Framework para interface reativa e performance.
+* **HTML5 / CSS3:** Estrutura e estilização (Dark Mode).
+* **JavaScript:** Lógica de construção do AFD e gerenciamento de estado.
+
+---
+
+## 💻 Como Executar Localmente
+
+Caso queira baixar o código e rodar na sua máquina (necessário [Node.js](https://nodejs.org/)):
+
+1.  **Clone o projeto:**
+    ```bash
+    git clone git@github.com:EmilyBalestrin/AnalisadorLexico.git
+    cd analisador-lexico
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Inicie o servidor:**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Acesse:**
+    Abra `http://localhost:5173/` no seu navegador.
+
+---
+
+## ✒️ Autores
+
+* **Emily L. Balestrin**
+* **Júlia F. Levandoski**
+
+---
+*Ciência da Computação — 2025*
