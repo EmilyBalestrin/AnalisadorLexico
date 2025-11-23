@@ -125,7 +125,7 @@
         <div class="input-group">
             <input
                     type="text"
-                    placeholder="Digite um token (ex: if, while, casa)"
+                    placeholder="Digite um token (ex: casa, abacaxi, etc.)"
                     bind:value={entradaNovoToken}
                     on:keydown={(e) => e.key === 'Enter' && adicionarToken()}
             />
