@@ -119,6 +119,48 @@
 
 <main class="container">
     <h1>Analisador Léxico das Girls</h1>
+
+    <section class="card config-section">
+        <h2>1. Configurar Autômato (Tokens Válidos)</h2>
+        <div class="input-group">
+            <input
+                    type="text"
+                    placeholder="Digite um token (ex: if, while, casa)"
+                    bind:value={entradaNovoToken}
+                    on:keydown={(e) => e.key === 'Enter' && adicionarToken()}
+            />
+            <button class="btn-primary" on:click={adicionarToken}>+ Adicionar Token</button>
+        </div>
+        <div class="tags">
+            {#each tokensValidos as token}
+        <span class="tag">
+          {token}
+            <button on:click={() => removerToken(token)}>x</button>
+        </span>
+            {/each}
+        </div>
+        <p class="hint">O autômato é reconstruído automaticamente ao adicionar os tokens.</p>
+    </section>
+
+    <section class="card test-section">
+        <h2>2. Testar Entrada </h2>
+        <div class="input-wrapper">
+            <input
+                    type="text"
+                    class:error={statusReconhecimento === 'erro'}
+                    class:success={statusReconhecimento === 'sucesso'}
+                    placeholder="Digite aqui... (Use ESPAÇO para validar)"
+                    bind:value={entradaAtual}
+                    on:input={manipularEntrada}
+            />
+            <div class="status-indicator">
+                Estado Atual: <strong>q{estadoAtual}</strong>
+                {#if estadosFinais.has(estadoAtual)}
+                    <span class="badge success">Final</span>
+                {/if}
+            </div>
+        </div>
+    </section>
 </main>
 
 <style>
