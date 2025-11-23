@@ -4,11 +4,11 @@ Este projeto consiste na implementação de um **Analisador Léxico** baseado em
 
 ---
 
-## 🌐 Acesso Online (Demo)
+## 🌐 Acesso Online
 
 Você pode utilizar o analisador diretamente pelo navegador, sem necessidade de instalação:
 
-**[Analisador Léxico](https://emilybalestrin.github.io/AnalisadorLexico/)**
+**[https://emilybalestrin.github.io/AnalisadorLexico](https://emilybalestrin.github.io/AnalisadorLexico/)**
 
 *(Caso prefira rodar localmente, siga as instruções na seção "Como Executar" abaixo).*
 
@@ -71,4 +71,3 @@ Caso queira baixar o código e rodar na sua máquina (necessário [Node.js](http
 * **Júlia F. Levandoski**
 
 ---
-*Ciência da Computação — 2025*
