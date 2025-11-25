@@ -19,7 +19,7 @@ Você pode utilizar o analisador diretamente pelo navegador, sem necessidade de 
 O analisador funciona como uma máquina de estados que processa a entrada do usuário caractere por caractere.
 
 ### Lógica Implementada
-1.  **Definição de Tokens:** O usuário cadastra palavras válidas (ex: `casa`, `abacaxi`, `maaça`). O algoritmo converte essa lista dinamicamente em uma **Matriz de Transição** ($M[estado, simbolo]$).
+1.  **Definição de Tokens:** O usuário cadastra palavras válidas (ex: `casa`, `abacaxi`, `maça`). O algoritmo converte essa lista dinamicamente em uma **Matriz de Transição** ($M[estado, simbolo]$).
 2.  **Reconhecimento:** Ao digitar na área de teste, o autômato transita entre os estados ($q0, q1...$) conforme os símbolos inseridos.
 3.  **Validação:** O caractere **Espaço** atua como separador. Ao digitá-lo, o sistema verifica se o estado atual é um **Estado Final**.
     * ✅ **Aceito:** Token reconhecido (adicionado ao histórico como válido).
